@@ -3,6 +3,12 @@
  const app = express();
  const cors = require("cors");
 
+// import express from "express";                       //Es modules 
+// import products from "./data/products.js";
+// import cors from "cors";
+// import dotenv from "dotenv";
+
+
  const dotenv = require("dotenv");
 
  dotenv.config();
