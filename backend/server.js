@@ -1,15 +1,17 @@
- const express = require("express");
- const products = require("./data/products");
- const app = express();
- const cors = require("cors");
+//  const express = require("express");
+//  const products = require("./data/products");
+//  const app = express();
+//  const cors = require("cors");
+// const dotenv = require("dotenv");
 
-// import express from "express";                       //Es modules 
-// import products from "./data/products.js";
-// import cors from "cors";
-// import dotenv from "dotenv";
+import express from "express";                       //Es modules 
+import products from "./data/products.js";
+import cors from "cors";
+import dotenv from "dotenv";
 
 
- const dotenv = require("dotenv");
+
+const app = express();
 
  dotenv.config();
 
