@@ -8,12 +8,16 @@ import express from "express";                       //Es modules
 import products from "./data/products.js";
 import cors from "cors";
 import dotenv from "dotenv";
+import connectDB from './config/db.js';
 
 
+dotenv.config();
+
+connectDB();
 
 const app = express();
 
- dotenv.config();
+
 
  app.use(cors());
 
