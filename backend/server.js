@@ -1,15 +1,14 @@
-//  const express = require("express");
-//  const products = require("./data/products");
-//  const app = express();
-//  const cors = require("cors");
+// const express = require("express");
+// const products = require("./data/products");
+// const cors = require("cors");
 // const dotenv = require("dotenv");
 
-import express from "express";                       //Es modules 
+import express from "express";       //ES module
 import products from "./data/products.js";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectDB from './config/db.js';
-
+import connectDB from "./config/db.js";
+import productRoutes from "./routes/productRoutes.js";
 
 dotenv.config();
 
@@ -17,22 +16,22 @@ connectDB();
 
 const app = express();
 
+app.use(cors());
 
-
- app.use(cors());
-
- app.get("/", (req, res, next) => {
+app.get("/", (req, res) => {
   res.send("API server is working");
 });
 
-app.get("/api/products", (req, res) => {
-    res.json(products);
-  });
-  
-app.get("/api/products/:id", (req, res) => {
-    const product = products.find((p) => p._id === req.params.id);
-    res.json(product);
-});
+// app.get("/api/products", (req, res) => {
+//   res.json(products);
+// });
+
+// app.get("/api/products/:id", (req, res) => {
+//   const product = products.find((p) => p._id === req.params.id);
+
+//   res.json(product);
+// });
+app.use("/api/products", productRoutes);
 
 const PORT = process.env.PORT || 5000;
 
